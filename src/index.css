@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+  --color-brand-lighter: #8b81ff;
   --color-brand-light: #7065f0;     /* Vibrant accent / hover state */
   --color-brand-main: #5643e7;      /* Primary navbar background & main branding */
   --color-brand-dark: #3f30b7;      /* Active state / deep brand text */
@@ -23,4 +24,16 @@
 
 html, body, #root {
     height: 100%;
+}
+
+/* Get rid of arrows on number input */
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
 }

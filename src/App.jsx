@@ -5,7 +5,7 @@ import { Outlet } from 'react-router'
 import placeholderImg from "./assets/placeholder.webp";
 
 const baseItemList = [
-  {name: "Television", price: "$200", category: "tech", picLink: placeholderImg}
+  {name: "Television", price: "$200.00", category: "tech", picLink: placeholderImg}
 ];
 
 export default function App() {
