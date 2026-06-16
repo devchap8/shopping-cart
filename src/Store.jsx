@@ -9,7 +9,7 @@ export default function Store() {
         <main className={"h-fit"}>
             {itemList.map(item => 
                 <div key={item.name} className={"h-auto w-56 bg-ui-snow p-2 border-2 border-b-0 border-ui-muted rounded-2xl hover:shadow-2xl shadow-brand-lighter transition-shadow duration-500 ease-in-out"}>
-                    <img alt={item.name} src={item.picLink}></img>
+                    <img alt={item.name} src={item.pic}></img>
                     <div className={"mt-2 text-lg font-bold tracking-wide"}>{item.name}</div>
                     <div className={"tracking-wider"}>{item.price}</div>
                     <form className={"bg-brand-light -m-2 mt-2 p-1 pr-2 pl-2 h-10 rounded-b-2xl flex items-center"}>
