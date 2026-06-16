@@ -20,6 +20,8 @@
   --color-ui-dark: #111827;          /* Dark gray for prominent text or crisp buttons */
   --color-ui-charcoal: #0b0f19;      /* Ultra-dark for clean contrast elements */
   --color-ui-black: #000000;         /* Pure black for absolute contrast / crisp shadows */
+
+  --breakpoint-xs: 31rem;
 }
 
 html, body, #root {

@@ -6,7 +6,7 @@ export default function Store() {
     const [itemList, setItemList] = useOutletContext();
 
     return (
-        <main className={"h-fit"}>
+        <main className={"h-fit p-6 grid content-evenly justify-items-center gap-6 md:gap-8 grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"}>
             {itemList.map(item => 
                 <div key={item.name} className={"h-auto w-56 bg-ui-snow p-2 border-2 border-b-0 border-ui-muted rounded-2xl hover:shadow-2xl shadow-brand-lighter transition-shadow duration-500 ease-in-out"}>
                     <img alt={item.name} src={item.pic}></img>
