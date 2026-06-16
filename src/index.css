@@ -1,1 +1,22 @@
 @import "tailwindcss";
+
+@theme {
+  --color-brand-light: #7065f0;     /* Vibrant accent / hover state */
+  --color-brand-main: #5643e7;      /* Primary navbar background & main branding */
+  --color-brand-dark: #3f30b7;      /* Active state / deep brand text */
+  --color-brand-tint: #f0eeff;      /* Super light tint for cart badges or alerts */
+
+  --color-ui-white: #ffffff;        /* Main card background & product grid items */
+  --color-ui-snow: #f9fafb;         /* Main page background */
+  --color-ui-light: #f3f4f6;        /* Subtle dividers, disabled states, or well backgrounds */
+  --color-ui-muted: #e5e7eb;        /* Border color for product cards and inputs */
+
+  --color-text-placeholder: #9ca3af; /* Input placeholders */
+  --color-text-muted: #6b7280;       /* Secondary text (e.g., "Shipping calculated at checkout") */
+  --color-text-dim: #4b5563;         /* Product descriptions / lesser headings */
+
+  --color-text-main: #1f2937;        /* Primary body text & product titles */
+  --color-ui-dark: #111827;          /* Dark gray for prominent text or crisp buttons */
+  --color-ui-charcoal: #0b0f19;      /* Ultra-dark for clean contrast elements */
+  --color-ui-black: #000000;         /* Pure black for absolute contrast / crisp shadows */
+}
