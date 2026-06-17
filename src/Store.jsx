@@ -7,14 +7,14 @@ export default function Store() {
 
     return (
         <>
-        <div className={"h-12 flex items-center justify-around bg-ui-snow border-b-2 border-b-ui-muted"}>
-            <select name="sortDropdown">
+        <div className={"h-14 flex items-center justify-around bg-ui-snow border-b-2 border-b-ui-muted"}>
+            <select className={"h-10 border-2 border-ui-muted focus:border-ui-gray focus:outline-0 rounded-t-lg p-1 text-text-dim"} name="sortDropdown">
                 <option value="newest">Newest Items First</option>
                 <option value="highest">Highest Price First</option>
                 <option value="lowest">Lowest Price First</option>
             </select>
             <input className={"bg-ui-light h-8 w-1/2 border-2 border-ui-muted focus:border-black focus:outline-0 rounded-xl p-3"} type="search" name="mainSearch"></input>
-            <select name="tagDropdown">
+            <select className={"h-10 border-2 border-ui-muted focus:border-ui-gray focus:outline-0 rounded-t-lg p-1 text-text-dim"} name="tagDropdown">
                 <option value="all">Show All Items</option>
                 <option value="tech">Tech</option>
                 <option value="clothing">Clothing</option>
@@ -22,6 +22,7 @@ export default function Store() {
                 <option value="lifestyle">Lifestyle</option>
             </select>
         </div>
+        
         <main className={"h-fit p-6 grid content-evenly justify-items-center gap-6 md:gap-8 grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5"}>
             {itemList.map(item => 
                 <div key={item.name} className={"h-auto w-56 bg-ui-snow p-2 border-2 border-b-0 border-ui-muted rounded-2xl hover:shadow-2xl shadow-brand-lighter transition-shadow duration-500 ease-in-out"}>
