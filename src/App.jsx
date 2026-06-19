@@ -91,14 +91,16 @@ export default function App() {
   const [itemList, setItemList] = useState(baseItemList);
   const [currCat, setCurrCat] = useState("all");
   const [currSort, setCurrSort] = useState("category");
+  const [currQuery, setCurrQuery] = useState("");
   
   const filterByCat = (cat, list = baseItemList, chain = true) => {
     setCurrCat(cat);
     let newList = [...list];
-    if(cat !== "all") newList = list.filter(item => item.category === cat);
+    if(cat !== "all") newList = newList.filter(item => item.category === cat);
     if(chain) {
+      newList = filterByQuery(currQuery, newList, false);
       newList = sortByPrice(currSort, newList, false);
-      setItemList(newList)
+      setItemList(newList);
     }  
     return newList;
   }
@@ -110,14 +112,28 @@ export default function App() {
     else if(sortType === "highest") newList = list.toSorted((a, b) => b.price - a.price);
     if(chain) {
       newList = filterByCat(currCat, newList, false);
+      newList = filterByQuery(currQuery, newList, false);
       setItemList(newList);
     } 
     return newList;
   }
 
+  const filterByQuery = (query, list = baseItemList, chain = true) => {
+    setCurrQuery(query);
+    let newList = [...list];
+    const regex = new RegExp(query.trim(), "i");
+    newList = newList.filter(item => regex.test(item.name));
+    if(chain) {
+      newList = filterByCat(currCat, newList, false);
+      newList = sortByPrice(currSort, newList, false);
+      setItemList(newList);
+    }
+    return newList;
+  }
 
 
-  const cont = {itemList, setItemList, filterByCat, sortByPrice};
+
+  const cont = {itemList, setItemList, filterByCat, sortByPrice, filterByQuery};
 
   return (
     <Fragment >

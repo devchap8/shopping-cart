@@ -13,7 +13,7 @@ export default function Store() {
                 <option value="highest">Highest Price First</option>
                 <option value="lowest">Lowest Price First</option>
             </select>
-            <input className={"bg-ui-light h-8 w-1/2 border-2 border-ui-muted focus:border-black focus:outline-0 rounded-xl p-3"} type="search" name="mainSearch" placeholder="Search Devbay"></input>
+            <input onChange={(e) => cont.filterByQuery(e.target.value)} className={"bg-ui-light h-8 w-1/2 border-2 border-ui-muted focus:border-black focus:outline-0 rounded-xl p-3"} type="search" name="mainSearch" placeholder="Search Devbay"></input>
             <select onChange={(e) => cont.filterByCat(e.target.value)} className={"h-10 text-xs sm:text-sm md:text-base border-2 border-ui-muted focus:border-ui-gray focus:outline-0 rounded-t-lg p-1 text-text-dim"} name="tagDropdown">
                 <option value="all">Show All Items</option>
                 <option value="tech">Tech</option>
