@@ -23,6 +23,11 @@ export default function Store() {
             </select>
         </div>
 
+        {cont.itemList.length < 1 && 
+        <div className={"flex flex-col h-1/2 justify-center text-center gap-10"}>
+            <h2 className={"text-5xl font-bold tracking-wide"}>No results found</h2>
+            <div className={"text-lg text-text-dim"}>Try searching with other terms that might match</div>
+        </div>}
         <main className={"h-fit p-6 grid content-evenly justify-items-center gap-6 md:gap-8 grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5"}>
             {cont.itemList.map(item => 
                 <div key={item.name} className={"h-auto w-56 bg-ui-snow p-2 border-2 border-b-0 border-ui-muted rounded-2xl hover:shadow-2xl shadow-brand-lighter transition-shadow duration-500 ease-in-out"}>
