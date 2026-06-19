@@ -92,23 +92,32 @@ export default function App() {
   const [currCat, setCurrCat] = useState("all");
   const [currSort, setCurrSort] = useState("category");
   
-  const filterByCat = (cat, list = baseItemList) => {
+  const filterByCat = (cat, list = baseItemList, chain = true) => {
     setCurrCat(cat);
-    if(cat === "all") setItemList(list);
-    else setItemList(list.filter(item => item.category === cat));
-
-    // filter by price and search term later here
+    let newList = [...list];
+    if(cat !== "all") newList = list.filter(item => item.category === cat);
+    if(chain) {
+      newList = sortByPrice(currSort, newList, false);
+      setItemList(newList)
+    }  
+    return newList;
   }
 
-  const sortByPrice = (sortType) => {
-    setCurrSort(sortType, list = baseItemList);
-    if(sortType === "category") setItemList(list);
-    // else setItemList(list.sort(item => item.))
+  const sortByPrice = (sortType, list = baseItemList, chain = true) => {
+    setCurrSort(sortType);
+    let newList = [...list];
+    if(sortType === "lowest") newList = list.toSorted((a, b) => a.price - b.price);
+    else if(sortType === "highest") newList = list.toSorted((a, b) => b.price - a.price);
+    if(chain) {
+      newList = filterByCat(currCat, newList, false);
+      setItemList(newList);
+    } 
+    return newList;
   }
 
 
 
-  const cont = {itemList, setItemList, filterByCat};
+  const cont = {itemList, setItemList, filterByCat, sortByPrice};
 
   return (
     <Fragment >

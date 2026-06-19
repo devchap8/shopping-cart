@@ -8,7 +8,7 @@ export default function Store() {
     return (
         <>
         <div className={"h-14 flex items-center justify-around bg-ui-snow border-b-2 border-b-ui-muted"}>
-            <select className={"h-10 text-xs sm:text-sm md:text-base border-2 border-ui-muted focus:border-ui-gray focus:outline-0 rounded-t-lg p-1 text-text-dim"} name="sortDropdown">
+            <select onChange={(e) => cont.sortByPrice(e.target.value)} className={"h-10 text-xs sm:text-sm md:text-base border-2 border-ui-muted focus:border-ui-gray focus:outline-0 rounded-t-lg p-1 text-text-dim"} name="sortDropdown">
                 <option value="category">Sort by Category</option>
                 <option value="highest">Highest Price First</option>
                 <option value="lowest">Lowest Price First</option>
