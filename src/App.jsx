@@ -89,11 +89,26 @@ const baseItemList = [
 export default function App() {
 
   const [itemList, setItemList] = useState(baseItemList);
+  
+  const filterByCat = (cat) => {
+    const cleanCat = cat.trim().toLowerCase();
+    if(cleanCat === "all") {
+      setItemList(baseItemList);
+    } else {
+      setItemList(baseItemList.filter(item => item.category === cleanCat));
+    }
+
+    // filter by price and search term later here
+  }
+
+
+
+  const cont = {itemList, setItemList, filterByCat};
 
   return (
     <Fragment >
       <NavBar />
-      <Outlet context={[itemList, setItemList]}/>
+      <Outlet context={cont}/>
     </Fragment>
   )
 }
