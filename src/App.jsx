@@ -92,6 +92,7 @@ export default function App() {
   const [currCat, setCurrCat] = useState("all");
   const [currSort, setCurrSort] = useState("category");
   const [currQuery, setCurrQuery] = useState("");
+  const [cartList, setCartList] = useState({Television: 1, });
   
   const filterByCat = (cat, list = baseItemList, chain = true) => {
     setCurrCat(cat);
@@ -133,11 +134,11 @@ export default function App() {
 
 
 
-  const cont = {itemList, setItemList, filterByCat, sortByPrice, filterByQuery};
+  const cont = {itemList, cartList, setItemList, filterByCat, sortByPrice, filterByQuery};
 
   return (
     <Fragment >
-      <NavBar />
+      <NavBar cartSize={Object.keys(cartList).length}/>
       <Outlet context={cont}/>
     </Fragment>
   )
