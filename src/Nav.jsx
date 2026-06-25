@@ -19,7 +19,7 @@ export default function NavBar({cartList}) {
                 <Link to="cart" className={"relative"}> 
                     <img className={"w-12 hover:scale-115 ease-in-out duration-300 invert"} src={cartSvg}></img>
                     {cartSize > 0 && 
-                    <div className={"absolute bg-red-500 min-w-6 p-px text-center rounded-full -top-2 -right-2 opacity-90"}>{cartSize}</div>
+                    <div data-testid="cart-size" className={"absolute bg-red-500 min-w-6 p-px text-center rounded-full -top-2 -right-2 opacity-90"}>{cartSize}</div>
                     }
                 </Link>
             </div>

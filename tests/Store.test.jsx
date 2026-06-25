@@ -133,5 +133,29 @@ it("all elements work in tandem", async () => {
     itemList = screen.getAllByTestId("item-name");
     expect(itemList.length).toBe(36);
     expect(itemList[0].innerHTML).toBe("Television");
-})
+});
+
+it("adding items to cart changes cart notification", async () => {
+    setup();
+    const user = userEvent.setup();
+    const cartSize = screen.getByTestId("cart-size");
+    expect(cartSize.innerHTML).toBe("1");
+
+    expect(screen.getByTestId("gaming-mouse-input").value).toBe("");
+    await user.type(screen.getByTestId("gaming-mouse-input"), "3");
+    expect(screen.getByTestId("gaming-mouse-input").value).toBe("3");
+    await user.click(screen.getByTestId("gaming-mouse-cart"));
+    expect(cartSize.innerHTML).toBe("4");
+
+    await user.click(screen.getByTestId("gaming-mouse-minus"));
+    expect(screen.getByTestId("gaming-mouse-input").value).toBe("2");
+    await user.click(screen.getByTestId("gaming-mouse-cart"));
+    expect(cartSize.innerHTML).toBe("3");
+
+    await user.click(screen.getByTestId("wireless-headphones-plus"));
+    await user.click(screen.getByTestId("wireless-headphones-plus"));
+    expect(screen.getByTestId("wireless-headphones-input").value).toBe("2");
+    await user.click(screen.getByTestId("wireless-headphones-cart"));
+    expect(cartSize.innerHTML).toBe("5");
+});
 
