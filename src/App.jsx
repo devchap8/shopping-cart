@@ -132,13 +132,21 @@ export default function App() {
     return newList;
   }
 
+  const addToCart = (e, itemName) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const qty = formData.get("qty");
+    setCartList(prevCart => ({
+      ...prevCart,
+      [itemName]: +qty
+    }));
+  }
 
-
-  const cont = {itemList, cartList, setItemList, filterByCat, sortByPrice, filterByQuery};
+  const cont = {itemList, cartList, setItemList, filterByCat, sortByPrice, filterByQuery, addToCart};
 
   return (
     <Fragment >
-      <NavBar cartSize={Object.keys(cartList).length}/>
+      <NavBar cartList={cartList}/>
       <Outlet context={cont}/>
     </Fragment>
   )
