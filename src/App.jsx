@@ -142,7 +142,14 @@ export default function App() {
     }));
   }
 
-  const cont = {itemList, cartList, setItemList, filterByCat, sortByPrice, filterByQuery, addToCart};
+  const pressPlusMinus = (e, isPlus) => {
+    e.preventDefault();
+    const input = isPlus ? e.target.nextElementSibling : e.target.previousElementSibling;
+    const newVal = isPlus ? +input.value + 1 : +input.value - 1;
+    if(newVal >= 0 && newVal <= 99) input.value = newVal;
+  }
+
+  const cont = {itemList, cartList, setItemList, filterByCat, sortByPrice, filterByQuery, addToCart, pressPlusMinus};
 
   return (
     <Fragment >
