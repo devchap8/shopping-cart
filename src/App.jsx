@@ -135,7 +135,8 @@ export default function App() {
   const addToCart = (e, itemName) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    const qty = formData.get("qty");
+    let qty = formData.get("qty");
+    qty = Math.max(+qty, 0);
     setCartList(prevCart => ({
       ...prevCart,
       [itemName]: +qty
