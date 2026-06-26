@@ -92,7 +92,7 @@ export default function App() {
   const [currCat, setCurrCat] = useState("all");
   const [currSort, setCurrSort] = useState("category");
   const [currQuery, setCurrQuery] = useState("");
-  const [cartList, setCartList] = useState({Television: 1, });
+  const [cartList, setCartList] = useState({Television: 1, "Gaming Mouse": 1});
   
   const filterByCat = (cat, list = baseItemList, chain = true) => {
     setCurrCat(cat);

@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+  --color-brand-lightest: #aaa2ff;
   --color-brand-lighter: #8b81ff;
   --color-brand-light: #7065f0;     /* Vibrant accent / hover state */
   --color-brand-main: #5643e7;      /* Primary navbar background & main branding */
@@ -27,6 +28,7 @@
 
 html, body, #root {
     height: 100%;
+    /* color: #aaa2ff; */
 }
 
 /* Get rid of arrows on number input */
