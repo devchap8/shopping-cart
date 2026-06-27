@@ -10,6 +10,16 @@ export default function Cart() {
         }
     }
 
+    const calcTotal = () => {
+        let total = 0;
+        for(let item of cont.itemList) {
+            if(item.name in cont.cartList) {
+                total += (+item.price * cont.cartList[item.name]);
+            }
+        }
+        return total;
+    }
+
     return (
         <>
         <section className={"flex pt-5 pb-2 px-8 justify-between"}>
@@ -47,7 +57,7 @@ export default function Cart() {
 
             <div className={"max-w-100 bg-ui-muted shadow-lg p-3 flex flex-col gap-1"}>
                 <h3 className={"text-xl"}>Subtotal ({Object.values(cont.cartList).length > 0 ? Object.values(cont.cartList).reduce((prev, curr) => prev + curr) : 0} items):</h3>
-                <div className={"text-3xl font-bold tracking-wide"}>$200.00</div>
+                <div className={"text-3xl font-bold tracking-wide"}>{`$${calcTotal()}.00`}</div>
                 <button className={"bg-brand-light rounded-xl text-lg font-bold text-ui-white cursor-pointer hover:bg-brand-lighter transition-colors duration-200"}>Go to Checkout</button>
             </div>
         </main>

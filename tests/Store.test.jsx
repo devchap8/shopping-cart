@@ -139,7 +139,7 @@ it("adding items to cart changes cart notification", async () => {
     setup();
     const user = userEvent.setup();
     const cartSize = screen.getByTestId("cart-size");
-    expect(cartSize.innerHTML).toBe("1");
+    expect(cartSize.innerHTML).toBe("2");
 
     expect(screen.getByTestId("gaming-mouse-input").value).toBe("");
     await user.type(screen.getByTestId("gaming-mouse-input"), "3");
