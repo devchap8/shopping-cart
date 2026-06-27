@@ -155,7 +155,7 @@ export default function App() {
     const itemName = e.target.getAttribute("data-item-name");
     isPlus 
       ? setCartList(prevCart => ({...prevCart, [itemName]: Math.min(prevCart[itemName] + 1, 99)}))
-      : setCartList(prevCart => ({...prevCart, [itemName]: Math.max(prevCart[itemName] - 1, 0)}))
+      : setCartList(prevCart => ({...prevCart, [itemName]: Math.max(prevCart[itemName] - 1, 1)}))
   }
 
   const cont = {itemList, cartList, setItemList, setCartList, filterByCat, sortByPrice, filterByQuery, addToCart, pressStorePlusMinus,
