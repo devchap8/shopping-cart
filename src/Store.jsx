@@ -35,9 +35,9 @@ export default function Store() {
                     <div data-testid="item-name" className={"mt-2 text-lg font-bold tracking-wide"}>{item.name}</div>
                     <div className={"tracking-wider"}>{`$${item.price}.00`}</div>
                     <form onSubmit={(e) => cont.addToCart(e, item.name)} className={"bg-brand-light -m-2 mt-2 p-1 pr-2 pl-2 h-10 rounded-b-2xl flex items-center"}>
-                        <button onClick={(e) => cont.pressPlusMinus(e, true)} data-testid={`${item.name.replaceAll(" ", "-").toLowerCase()}-plus`} className={"border-2 border-r-0 w-6 font-bold hover:bg-brand-main rounded-l-lg"}>+</button>
+                        <button onClick={(e) => cont.pressStorePlusMinus(e, true)} data-testid={`${item.name.replaceAll(" ", "-").toLowerCase()}-plus`} className={"border-2 border-r-0 w-6 font-bold hover:bg-brand-main rounded-l-lg"}>+</button>
                         <input data-testid={`${item.name.replaceAll(" ", "-").toLowerCase()}-input`} className={"border-ui-dark border-t-2 border-b-2 text-center focus:outline-0 focus:bg-brand-lighter"} value={item.qty} type="number" min="0" max="99" name="qty" placeholder="qty" data-item-name={item.name}></input>
-                        <button onClick={(e) => cont.pressPlusMinus(e, false)} data-testid={`${item.name.replaceAll(" ", "-").toLowerCase()}-minus`} className={"border-2 border-l-0 w-6 mr-auto font-bold hover:bg-brand-main rounded-r-lg"}>-</button>
+                        <button onClick={(e) => cont.pressStorePlusMinus(e, false)} data-testid={`${item.name.replaceAll(" ", "-").toLowerCase()}-minus`} className={"border-2 border-l-0 w-6 mr-auto font-bold hover:bg-brand-main rounded-r-lg"}>-</button>
                         <input data-testid={`${item.name.replaceAll(" ", "-").toLowerCase()}-cart`} className={"size-6 hover:scale-120 ease-in-out duration-200"} type="image" src={cartPlus}></input>
                     </form>
                 </div>

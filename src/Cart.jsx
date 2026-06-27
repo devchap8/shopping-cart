@@ -44,9 +44,9 @@ export default function Cart() {
                                 <div className={"text-2xl font-bold tracking-wide"}>{`$${item.price * +cont.cartList[item.name]}.00`}</div> 
                                 <div className={"flex flex-col w-fit"}>
                                     <div className={"flex text-xl"}>
-                                        <button className={"w-7 p-0.5 hover:bg-brand-lightest transition-colors duration-200 border-3 border-brand-main border-r-0 rounded-l-xl"}>-</button>
+                                        <button onClick={(e) => cont.pressCartPlusMinus(e, false)} data-item-name={item.name} className={"w-7 p-0.5 hover:bg-brand-lightest transition-colors duration-200 border-3 border-brand-main border-r-0 rounded-l-xl"}>-</button>
                                         <div className={"w-6    p-0.5  text-center border-3 border-brand-main border-x-0"}>{cont.cartList[item.name]}</div>
-                                        <button className={"w-7 p-0.5 hover:bg-brand-lightest transition-colors duration-200 border-3 border-brand-main border-l-0 rounded-r-xl"}>+</button>
+                                        <button onClick={(e) => cont.pressCartPlusMinus(e, true)} data-item-name={item.name} className={"w-7 p-0.5 hover:bg-brand-lightest transition-colors duration-200 border-3 border-brand-main border-l-0 rounded-r-xl"}>+</button>
                                     </div>
                                 </div>
                             </div>

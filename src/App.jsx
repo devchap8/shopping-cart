@@ -143,14 +143,24 @@ export default function App() {
     }));
   }
 
-  const pressPlusMinus = (e, isPlus) => {
+  const pressStorePlusMinus = (e, isPlus) => {
     e.preventDefault();
     const input = isPlus ? e.target.nextElementSibling : e.target.previousElementSibling;
     const newVal = isPlus ? +input.value + 1 : +input.value - 1;
     if(newVal >= 0 && newVal <= 99) input.value = newVal;
   }
 
-  const cont = {itemList, cartList, setItemList, setCartList, filterByCat, sortByPrice, filterByQuery, addToCart, pressPlusMinus};
+  const pressCartPlusMinus = (e, isPlus) => {
+    e.preventDefault();
+    const itemName = e.target.getAttribute("data-item-name");
+    isPlus 
+      ? setCartList(prevCart => ({...prevCart, [itemName]: Math.min(prevCart[itemName] + 1, 99)}))
+      : setCartList(prevCart => ({...prevCart, [itemName]: Math.max(prevCart[itemName] - 1, 0)}))
+  }
+
+  const cont = {itemList, cartList, setItemList, setCartList, filterByCat, sortByPrice, filterByQuery, addToCart, pressStorePlusMinus,
+    pressCartPlusMinus
+  };
 
   return (
     <Fragment >
