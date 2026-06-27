@@ -6,7 +6,7 @@ import { Link } from "react-router";
 export default function NavBar({cartList}) {
 
     const getCartSize = () => {
-        return Object.values(cartList).reduce((last, curr) => last + curr);
+        return Object.values(cartList).reduce((last, curr) => last + curr, 0);
     }
     const cartSize = getCartSize();
 

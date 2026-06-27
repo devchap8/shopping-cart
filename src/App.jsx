@@ -150,7 +150,7 @@ export default function App() {
     if(newVal >= 0 && newVal <= 99) input.value = newVal;
   }
 
-  const cont = {itemList, cartList, setItemList, filterByCat, sortByPrice, filterByQuery, addToCart, pressPlusMinus};
+  const cont = {itemList, cartList, setItemList, setCartList, filterByCat, sortByPrice, filterByQuery, addToCart, pressPlusMinus};
 
   return (
     <Fragment >
