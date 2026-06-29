@@ -38,7 +38,7 @@ export default function Cart() {
             <div className={"flex-1 flex flex-col gap-3"}>
                 {cont.itemList.map(item => {
                     if(item.name in cont.cartList) {
-                return  <div className={"flex xs:flex-row p-2 bg-ui-muted shadow-lg gap-5"} key={item.name}>
+                return  <div className={"flex xs:flex-row p-2 bg-ui-muted shadow-lg gap-1 xs:gap-5"} key={item.name}>
                             <img className={"size-25 xs:size-30"} src={item.pic} alt={item.name}></img>
                             <div className={"flex flex-col justify-around"}>
                                 <div className={"text-xl xs:text-2xl tracking-wide"}>{item.name}</div>
@@ -47,7 +47,7 @@ export default function Cart() {
                                     <div className={""}>Standard Shipping</div>
                                 </div>
                             </div>
-                            <div className={"flex flex-col ml-auto justify-around items-end mr-3"}>
+                            <div className={"flex flex-col ml-auto justify-around items-end mr-3 scale-80 xs:scale-100"}>
                                 <div className={"text-2xl font-bold tracking-wide"}>{`$${item.price * +cont.cartList[item.name]}.00`}</div> 
                                 <div className={"flex flex-col w-fit"}>
                                     <div className={"flex text-xl"}>
@@ -63,7 +63,7 @@ export default function Cart() {
                 })}
             </div>
 
-            <div className={"max-w-100 min-w-90 h-31.25 bg-ui-muted shadow-lg p-3 flex flex-col gap-1 lg:sticky lg:top-5"}>
+            <div className={"max-w-100 min-w-80 h-31.25 bg-ui-muted shadow-lg p-3 flex flex-col gap-1 lg:sticky lg:top-5"}>
                 <h3 className={"text-xl"}>Subtotal ({Object.values(cont.cartList).length > 0 ? Object.values(cont.cartList).reduce((prev, curr) => prev + curr) : 0} items):</h3>
                 <div className={"text-3xl font-bold tracking-wide"}>{`$${calcTotal()}.00`}</div>
                 <button className={"bg-brand-light rounded-xl text-lg font-bold text-ui-white cursor-pointer hover:bg-brand-lighter transition-colors duration-200"}>Go to Checkout</button>
