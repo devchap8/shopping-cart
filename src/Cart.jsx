@@ -31,7 +31,7 @@ export default function Cart() {
         <>
         <section className={"flex pt-5 pb-2 px-8 justify-between relative"}>
             <h2 className={"text-2xl"}>Your Cart</h2>
-            <button onClick={clearCartList} className={"border-ui-muted hover:bg-ui-snow border-2 px-2 py-1 cursor-pointer rounded-xl shadow hover:border-brand-lighter transition-color duration-200"}>Clear Cart</button>
+            <button data-testid={"clear-cart-btn"} onClick={clearCartList} className={"border-ui-muted hover:bg-ui-snow border-2 px-2 py-1 cursor-pointer rounded-xl shadow hover:border-brand-lighter transition-color duration-200"}>Clear Cart</button>
         </section>
         <main className={"flex flex-col-reverse gap-7 p-3 lg:flex-row"}>
             
@@ -51,10 +51,10 @@ export default function Cart() {
                                 <div className={"text-2xl font-bold tracking-wide"}>{`$${item.price * +cont.cartList[item.name]}.00`}</div> 
                                 <div className={"flex flex-col w-fit"}>
                                     <div className={"flex text-xl"}>
-                                        <button onClick={(e) => removeItem(e)} data-item-name={item.name} className={"cursor-pointer w-7 transition-all duration-200 hover:scale-120 mr-2"}><img data-item-name={item.name} className={""} src={trashSvg}></img></button>
-                                        <button onClick={(e) => cont.pressCartPlusMinus(e, false)} data-item-name={item.name} className={"w-7 p-0.5 hover:bg-brand-lightest transition-colors duration-200 border-3 border-brand-main border-r-0 rounded-l-xl"}>-</button>
-                                        <div className={"w-6    p-0.5  text-center border-3 border-brand-main border-x-0"}>{cont.cartList[item.name]}</div>
-                                        <button onClick={(e) => cont.pressCartPlusMinus(e, true)} data-item-name={item.name} className={"w-7 p-0.5 hover:bg-brand-lightest transition-colors duration-200 border-3 border-brand-main border-l-0 rounded-r-xl"}>+</button>
+                                        <button data-testid={`${item.name.replaceAll(" ", "-").toLowerCase()}-trash`} onClick={(e) => removeItem(e)} data-item-name={item.name} className={"cursor-pointer w-7 transition-all duration-200 hover:scale-120 mr-2"}><img data-item-name={item.name} className={""} src={trashSvg}></img></button>
+                                        <button data-testid={`${item.name.replaceAll(" ", "-").toLowerCase()}-minus`} onClick={(e) => cont.pressCartPlusMinus(e, false)} data-item-name={item.name} className={"w-7 p-0.5 hover:bg-brand-lightest transition-colors duration-200 border-3 border-brand-main border-r-0 rounded-l-xl"}>-</button>
+                                        <div  data-testid={`${item.name.replaceAll(" ", "-").toLowerCase()}-amt`} className={"w-6    p-0.5  text-center border-3 border-brand-main border-x-0"}>{cont.cartList[item.name]}</div>
+                                        <button data-testid={`${item.name.replaceAll(" ", "-").toLowerCase()}-plus`} onClick={(e) => cont.pressCartPlusMinus(e, true)} data-item-name={item.name} className={"w-7 p-0.5 hover:bg-brand-lightest transition-colors duration-200 border-3 border-brand-main border-l-0 rounded-r-xl"}>+</button>
                                     </div>
                                 </div>
                             </div>
