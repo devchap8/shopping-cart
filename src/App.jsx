@@ -132,6 +132,7 @@ export default function App() {
     return newList;
   }
 
+
   const addToCart = (e, itemName) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -159,7 +160,7 @@ export default function App() {
   }
 
   const cont = {itemList, cartList, setItemList, setCartList, filterByCat, sortByPrice, filterByQuery, addToCart, pressStorePlusMinus,
-    pressCartPlusMinus, currCat, currSort
+    pressCartPlusMinus, setCurrCat, setCurrSort
   };
 
   return (

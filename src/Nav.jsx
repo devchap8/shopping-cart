@@ -14,7 +14,7 @@ export default function NavBar({cartList}) {
         <nav className={"flex h-20 p-8 items-center bg-brand-main text-ui-white sticky top-0 self-start"}>
             <h1 className={"text-4xl font-bold tracking-wide"}>Devbay</h1>
             <div className={"flex gap-4 ml-auto"}>
-                <Link to="/"    > <img className={"w-12 hover:scale-115 ease-in-out duration-300 invert"} src={homeSvg}></img></Link>
+                <Link to="/"   > <img className={"w-12 hover:scale-115 ease-in-out duration-300 invert"} src={homeSvg}></img></Link>
                 <Link to="store"> <img className={"w-12 hover:scale-115 ease-in-out duration-300 invert"} src={storeSvg}></img></Link>
                 <Link to="cart" className={"relative"}> 
                     <img className={"w-12 hover:scale-115 ease-in-out duration-300 invert"} src={cartSvg}></img>

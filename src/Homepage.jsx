@@ -1,6 +1,6 @@
 import clothesImg from "./assets/clothes.avif";
 import clothesCropped from "./assets/clothes-cropped.avif";
-import { useOutletContext } from "react-router";
+import { useOutletContext, Link } from "react-router";
 
 import televisionImg from "./assets/television.avif";
 import monitorImg from "./assets/monitor.avif";
@@ -36,10 +36,10 @@ export default function Homepage() {
             </div>
                 <div className={"flex max-w-300 justify-between w-full bg-none px-5"}>
                     <div className={"text-2xl tracking-wide font-bold"}>Shop for...</div>
-                    <button className={"underline text-xl text-brand-dark font-bold hover:text-brand-lighter cursor-pointer transition-all duration-150"}>See All</button>
+                    <Link to="store" onClick={() => cont.filterByCat("all")} className={"underline text-xl text-brand-dark font-bold hover:text-brand-lighter cursor-pointer transition-all duration-150"}>See All</Link>
                 </div>
                 <div className={"flex gap-10 overflow-x-auto overflow-y-visible w-full max-w-300 p-5"}>
-                    <button className={"shrink-0 w-80 sm:w-100 bg-ui-muted p-3 rounded-2xl text-left cursor-pointer transition-all duration-200 hover:shadow-xl hover:shadow-brand-lighter hover:scale-105"}>
+                    <Link to="store" onClick={() => cont.filterByCat("tech")} className={"shrink-0 w-80 sm:w-100 bg-ui-muted p-3 rounded-2xl text-left cursor-pointer transition-all duration-200 hover:shadow-xl hover:shadow-brand-lighter hover:scale-105"}>
                         <div className={"text-4xl font-bold tracking-wider ml-1 mb-1"}>Tech</div>
                         <div className={"grid grid-cols-2 gap-2"}>
                             <div>
@@ -59,8 +59,8 @@ export default function Homepage() {
                                 <div className={"tracking-tight"}>Mechanical Keyboard</div>
                             </div>
                         </div>
-                    </button>
-                    <button className={"shrink-0 w-80 sm:w-100 bg-ui-muted p-3 rounded-2xl text-left cursor-pointer transition-all duration-200 hover:shadow-xl hover:shadow-brand-lighter hover:scale-105"}>
+                    </Link>
+                    <Link to="store" onClick={() => cont.filterByCat("clothing")} className={"shrink-0 w-80 sm:w-100 bg-ui-muted p-3 rounded-2xl text-left cursor-pointer transition-all duration-200 hover:shadow-xl hover:shadow-brand-lighter hover:scale-105"}>
                         <div className={"text-4xl font-bold tracking-wider ml-1 mb-1"}>Clothing</div>
                         <div className={"grid grid-cols-2 gap-2"}>
                             <div>
@@ -80,8 +80,8 @@ export default function Homepage() {
                                 <div className={"tracking-tight"}>Button-Down Shirt</div>
                             </div>
                         </div>
-                    </button>
-                    <button className={"shrink-0 w-80 sm:w-100 bg-ui-muted p-3 rounded-2xl text-left cursor-pointer transition-all duration-200 hover:shadow-xl hover:shadow-brand-lighter hover:scale-105"}>
+                    </Link>
+                    <Link to="store" onClick={() => cont.filterByCat("home")} className={"shrink-0 w-80 sm:w-100 bg-ui-muted p-3 rounded-2xl text-left cursor-pointer transition-all duration-200 hover:shadow-xl hover:shadow-brand-lighter hover:scale-105"}>
                         <div className={"text-4xl font-bold tracking-wider ml-1 mb-1"}>Home</div>
                         <div className={"grid grid-cols-2 gap-2"}>
                             <div>
@@ -101,8 +101,8 @@ export default function Homepage() {
                                 <div className={"tracking-tight"}>Abstract Wall Art</div>
                             </div>
                         </div>
-                    </button>
-                    <button className={"shrink-0 w-80 sm:w-100 bg-ui-muted p-3 rounded-2xl text-left cursor-pointer transition-all duration-200 hover:shadow-xl hover:shadow-brand-lighter hover:scale-105"}>
+                    </Link>
+                    <Link to="store" onClick={() => cont.filterByCat("lifestyle")} className={"shrink-0 w-80 sm:w-100 bg-ui-muted p-3 rounded-2xl text-left cursor-pointer transition-all duration-200 hover:shadow-xl hover:shadow-brand-lighter hover:scale-105"}>
                         <div className={"text-4xl font-bold tracking-wider ml-1 mb-1"}>Lifestyle</div>
                         <div className={"grid grid-cols-2 gap-2"}>
                             <div>
@@ -122,7 +122,7 @@ export default function Homepage() {
                                 <div className={"tracking-tight"}>Luxuary Tent</div>
                             </div>
                         </div>
-                    </button>
+                    </Link>
                 </div>
         </div>
     )
