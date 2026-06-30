@@ -8,13 +8,13 @@ export default function Store() {
     return (
         <div>
         <div className={"h-14 flex items-center justify-around bg-ui-snow border-b-2 border-b-ui-muted sticky top-20 self-start"} data-testid="store-nav-bar">
-            <select onChange={(e) => cont.sortByPrice(e.target.value)} data-testid="select-sort" className={"h-10 text-xs sm:text-sm md:text-base border-2 border-ui-muted focus:border-ui-gray focus:outline-0 rounded-t-lg p-1 text-text-dim"} name="sortDropdown">
+            <select defaultValue={cont.currSort} onChange={(e) => cont.sortByPrice(e.target.value)} data-testid="select-sort" className={"h-10 text-xs sm:text-sm md:text-base border-2 border-ui-muted focus:border-ui-gray focus:outline-0 rounded-t-lg p-1 text-text-dim"} name="sortDropdown">
                 <option value="category">Sort by Category</option>
                 <option value="highest">Highest Price First</option>
                 <option value="lowest">Lowest Price First</option>
             </select>
             <input onChange={(e) => cont.filterByQuery(e.target.value)} className={"bg-ui-light h-8 w-1/2 border-2 border-ui-muted focus:border-black focus:outline-0 rounded-xl p-3"} type="search" name="mainSearch" placeholder="Search Devbay"></input>
-            <select onChange={(e) => cont.filterByCat(e.target.value)} data-testid="select-filter" className={"h-10 text-xs sm:text-sm md:text-base border-2 border-ui-muted focus:border-ui-gray focus:outline-0 rounded-t-lg p-1 text-text-dim"} name="tagDropdown">
+            <select defaultValue={cont.currCat} onChange={(e) => cont.filterByCat(e.target.value)} data-testid="select-filter" className={"h-10 text-xs sm:text-sm md:text-base border-2 border-ui-muted focus:border-ui-gray focus:outline-0 rounded-t-lg p-1 text-text-dim"} name="tagDropdown">
                 <option value="all">Show All Items</option>
                 <option value="tech">Tech</option>
                 <option value="clothing">Clothing</option>

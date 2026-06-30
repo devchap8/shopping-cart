@@ -159,7 +159,7 @@ export default function App() {
   }
 
   const cont = {itemList, cartList, setItemList, setCartList, filterByCat, sortByPrice, filterByQuery, addToCart, pressStorePlusMinus,
-    pressCartPlusMinus
+    pressCartPlusMinus, currCat, currSort
   };
 
   return (
