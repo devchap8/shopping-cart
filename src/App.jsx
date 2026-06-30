@@ -163,9 +163,13 @@ export default function App() {
   };
 
   return (
-    <Fragment >
-      <NavBar cartList={cartList}/>
-      <Outlet context={cont}/>
-    </Fragment>
+    <div className="" >
+      <header className={"sticky top-0"}>
+        <NavBar cartList={cartList}/>
+      </header>
+      <main className={""}>
+        <Outlet context={cont}/>
+      </main>
+    </div>
   )
 }

@@ -6,8 +6,8 @@ export default function Store() {
     const cont = useOutletContext();
 
     return (
-        <>
-        <div className={"h-14 flex items-center justify-around bg-ui-snow border-b-2 border-b-ui-muted sticky top-20"} data-testid="store-nav-bar">
+        <div>
+        <div className={"h-14 flex items-center justify-around bg-ui-snow border-b-2 border-b-ui-muted sticky top-20 self-start"} data-testid="store-nav-bar">
             <select onChange={(e) => cont.sortByPrice(e.target.value)} data-testid="select-sort" className={"h-10 text-xs sm:text-sm md:text-base border-2 border-ui-muted focus:border-ui-gray focus:outline-0 rounded-t-lg p-1 text-text-dim"} name="sortDropdown">
                 <option value="category">Sort by Category</option>
                 <option value="highest">Highest Price First</option>
@@ -43,6 +43,6 @@ export default function Store() {
                 </div>
             )}
         </main>
-        </>
+        </div>
     )
 }
