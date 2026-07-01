@@ -3,9 +3,9 @@ A frontend mock storefront implementation. Contains a homepage with product info
 
 App deployed via Netlify [here](https://storied-bombolone-ede134.netlify.app//)
 
-Product images downloaded from [Unsplash.com] (https://unsplash.com)
+Product images downloaded from [Unsplash.com](https://unsplash.com)
 
-Icon SVGs downloaded from [Pictogrammers.com] (https://pictogrammers.com)
+Icon SVGs downloaded from [Pictogrammers.com](https://pictogrammers.com)
 
 ## Tech Stack
 * React
