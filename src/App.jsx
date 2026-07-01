@@ -160,7 +160,7 @@ export default function App() {
   }
 
   const cont = {itemList, cartList, setItemList, setCartList, filterByCat, sortByPrice, filterByQuery, addToCart, pressStorePlusMinus,
-    pressCartPlusMinus, setCurrCat, setCurrSort
+    pressCartPlusMinus, setCurrCat, setCurrSort, baseItemList
   };
 
   return (

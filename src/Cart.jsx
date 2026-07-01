@@ -36,7 +36,7 @@ export default function Cart() {
         <main className={"flex flex-col-reverse gap-7 p-3 lg:flex-row"}>
             
             <div className={"flex-1 flex flex-col gap-3"}>
-                {cont.itemList.map(item => {
+                {cont.baseItemList.map(item => {
                     if(item.name in cont.cartList) {
                 return  <div className={"flex xs:flex-row p-2 bg-ui-muted shadow-lg gap-1 xs:gap-5"} key={item.name}>
                             <img className={"size-25 xs:size-30"} src={item.pic} alt={item.name}></img>
