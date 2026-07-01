@@ -1,16 +1,22 @@
-# React + Vite
+# Shopping Cart Project
+A frontend mock storefront implementation. Contains a homepage with product information, a store page with 36 products containing a search bar and 2 select dropdowns that dynamically filter the products according to the user's queries, and a cart page which automatically shows all the user's selected items and allows the user to adjust the quantities and delete items. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+App deployed via Netlify [here](https://storied-bombolone-ede134.netlify.app//)
 
-Currently, two official plugins are available:
+Product images downloaded from [Unsplash.com] (https://unsplash.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Icon SVGs downloaded from [Pictogrammers.com] (https://pictogrammers.com)
 
-## React Compiler
+## Tech Stack
+* React
+* Tailwind CSS
+* HTML
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## What I learned
+This was my third React project and my first project using React Router and the React testing library. This was also my second Tailwind CSS project. I learned about:
+* Structuring a project with multiple pages
+* Using outlets to nest child pages under my Navbar component
+* Basics of testing with the React Testing library
+* Mocking using the React Test Library
+* Using a memory router to manage state while testing UI
+* Responsive design through Tailwind CSS
